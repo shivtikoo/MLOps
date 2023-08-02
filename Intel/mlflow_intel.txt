@@ -1,0 +1,100 @@
+MLOPS
+
+MLFLOW
+
+STEPS TO FOLOW TO MAKE A SUCCESSFUL PIPELINE:
+
+-STEP 01:
+
+CREATE A CONDA ENVIRONMENT:
+	FOLLOW THE FOLLOWING COMMANDS;
+		- conda create -n envname python=3.9 ipykernel
+		- conda activate envname
+		- python -m ipykernel install --user --name=envname
+		
+		- INSTALL NECCESSARY LIBRARIES:
+			- pip install pandas
+			- pip install numpy
+			- pip install scikit-learn
+			- pip install imblearn
+			- pip install matplotlib
+			- pip install mlflow
+
+-STEP 02:
+
+MODULARIZE THE MODEL, ONCE THE MODEL IS MADE MOVE TO STEP 3
+
+-STEP 03:
+
+INSIDE THE TRAINING FUNCTION;
+	- mlflow.set_experiment(experiment_name)
+		set run_name also
+	- with mlflow.start_run():
+		- CALL OTHER FUNCTIONS INSIDE IT
+		- LOG ARTIFACTS
+			- mlflow.log_artifact()
+		- LOG MODEL
+			- mlflow.log_model()
+		- LOG PARAMETERS
+			- mlflow.log_param()
+		- LOG METRICS
+			- mlflow.log_metric()
+		- LOG TAGS
+			- mlflow.set_tags()
+
+-STEP 04:
+	- GO TP THE DIRECTORY OF OUR MLRUNS AND RUN MLFLOW UI
+
+-STEP 05:
+	- COMPARE MODELS AND CAN CHOOSE A MODEL TO BRING INTO PRODUCTION
+		- import mlflow
+		  with mlflow.start_run(run_name=run_name) as run:
+   			 result = mlflow.register_model(
+        		"runs:/dff923c9e0924e8e968eaed4cab33ee9/model",
+        		"iris-classifier-2"
+    			)
+
+-STEP 06:
+	- client = mlflow.tracking.MlflowClient()
+	client.transition_model_version_stage(
+    	name="Term_Deposit",
+    	version=4,
+    	stage="Production"
+	)
+	
+-STEP 07:
+	- #PREDICTING WITH THE HELP OF MODEL IN PRODUCTION
+	import mlflow.pyfunc
+
+	model_name = "Term_Deposit"
+	stage = 'Production'
+
+	model = mlflow.pyfunc.load_model(
+    	model_uri=f"models:/{model_name}/{stage}"
+	)
+	# PASS ONE ROW SIMPLY TO MAKE A PARTICULAR PREDICTION
+	y_pred = model.predict(X_test)
+	print(y_pred)
+
+- STEP 08:
+	- SERVING THE MODEL
+		- IN THE COMMAND PROMPT
+			C:\Users\Shiv.tikoo> set MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+		- ANACONDA PROMPT
+			(base) C:\Users\Shiv.tikoo\Downloads\Project> conda activate CV_ClaimPrediction
+			(CV_ClaimPrediction) C:\Users\Shiv.tikoo\Downloads\Project> mlflow models serve --model-uri models:/Best_Model/Version=2 -p 1568 --no-conda
+		- #SERVING THE MODEL FROM THE MODEL REGISTRY
+			import mlflow
+			mlflow.set_tracking_uri('127.0.0.1:5000')
+	
+-STEP 09:
+	- import requests
+		#BATCH PREDICTION
+		lst = X_test.values.tolist()
+		inference_request = {
+        	"dataframe_records": lst
+		}
+		endpoint = "http://localhost:1234/invocations"
+		response = requests.post(endpoint, json=inference_request)
+		print(response)		
+

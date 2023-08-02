@@ -1,0 +1,102 @@
+MLOPS
+
+Imporving efficiency and effectiveness of machine learning models in production.  
+
+WHAT?
+A practice for managing and deploying machine learning models in production.
+
+WORKFLOW:
+Data Preparation
+Model Training
+Model Evaluation
+Model Deployment
+Model Monitoring & Maintenance
+Continous Improvement
+
+Tools & Technologies:
+CLOUD PLATFORMS
+CONTAINERIZATION & ORCHESTRATION TOOLS
+WOKRFLOW AUTOMATION TOOLS
+VCS
+MONITORING & LOGGING TOOLS
+TESTING & VALIDATION TOOLS
+
+BENEFITS:
+Faster time to market
+Improved accuracy & performance
+Scalability
+Cost Saving
+Compliance & Governance
+
+Challenges in implementing MLOps:
+Data Quality & Variation
+Lack of standardisation
+Complex and variability of ML models
+Lack of standardization
+Limited Expertise
+Cost & Restraint constraints
+Compliance and Regulatory requirements
+
+Best Practices:
+Version COntrol
+Build a strong dat foundation
+Automate as much as possible
+Monitor and measure performance
+Collaborate across teams
+
+STREAMLINE DEVELOPMENT DEPLOYMENYT AND MANAGEMENT OF ML MODELS
+
+THERE IS A ROAD AND NOW WE FORM THE MAP:
+1.Data Gathering
+2.Data Pipelining
+3.EDA
+4.Feature Engineering
+5.Feature Selection
+6.Training
+7.Hyperparameter tuning
+8.Deploying
+
+Companies mai deploying v important; as need to test in different employments.
+
+Machine Learning for IT operations
+CI/CD pipeline
+A continuous integration and continuous deployment (CI/CD) pipeline is a series of steps that must be performed in order to deliver a new version of software.
+
+
+-STEP 01:
+	Versioning Tools:
+		-GIT 
+		-GITHUB
+		-SVN
+
+-STEP 02:
+	ML & DL Algos
+
+-STEP 03:
+	CI/CD PIPELINE
+		-GITHUB ACTIONS
+
+-STEP 04:
+	CLOUD & DEVOPS Automation
+		-Dockers
+		-AWS
+		-GCP
+		-Azure
+
+
+		
+	 
+
+	
+
+	
+ 
+
+
+
+
+
+
+
+
+

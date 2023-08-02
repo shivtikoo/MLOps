@@ -1,0 +1,7 @@
+06-June
+
+Started with the simple question why do we even need MLOps in the first place, had the quick realisation that it is very different from DEVOps as data comes into the picture with MLOps and that makes it a separate affair altogether. Coming to the why, realised there exists a disconnect between the data engineer and the data scientist but as mentioned by you yesterday we are not to work on that disconnect. 
+
+Taking a deeper dive I was able to understand that MLOps doesn't focus on the problem statement but on accelerating the problem solving process.
+
+The MLOps toolchain includes several different phases of the machine learning cycle and from our discussion I understood that you want us to work on pi
